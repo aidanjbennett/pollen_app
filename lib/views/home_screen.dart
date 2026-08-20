@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+
 import 'package:pollen_app/widgets/app_navigation_bar.dart';
+import 'package:pollen_app/widgets/home/analysis_card_widget.dart';
 import 'package:pollen_app/widgets/home/live_pollen_tracker_widget.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -14,7 +16,7 @@ class HomeScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16),
+              padding: EdgeInsetsDirectional.symmetric(horizontal: 16),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -29,18 +31,39 @@ class HomeScreen extends StatelessWidget {
                 ],
               ),
             ),
+
             const SizedBox(height: 16),
+
             const LivePollenTrackerWidget(),
-            Row(
-              children: [
-                Text("Pollen Analysis"),
-                Spacer(),
-                Text("Pollen Forecast"),
-                Spacer(),
-                Text("Weather"),
-                Spacer(),
-                Text("Allegy Log"),
-              ],
+
+            const SizedBox(height: 24),
+
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              padding: const EdgeInsetsDirectional.symmetric(horizontal: 16),
+              child: Row(
+                children: [
+                  AnalysisCardWidget(
+                    title: 'Pollen Analysis',
+                    icon: Icons.analytics_outlined,
+                  ),
+                  const SizedBox(width: 12),
+                  AnalysisCardWidget(
+                    title: 'Pollen Forecast',
+                    icon: Icons.calendar_today_outlined,
+                  ),
+                  const SizedBox(width: 12),
+                  AnalysisCardWidget(
+                    title: 'Weather',
+                    icon: Icons.cloud_outlined,
+                  ),
+                  const SizedBox(width: 12),
+                  AnalysisCardWidget(
+                    title: 'Allergy Log',
+                    icon: Icons.edit_note_outlined,
+                  ),
+                ],
+              ),
             ),
           ],
         ),
