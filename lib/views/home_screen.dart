@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import 'package:pollen_app/widgets/app_navigation_bar.dart';
@@ -46,21 +47,41 @@ class HomeScreen extends StatelessWidget {
                   AnalysisCardWidget(
                     title: 'Pollen Analysis',
                     icon: Icons.analytics_outlined,
+                    onTap: () {
+                      if (kDebugMode) {
+                        print("Pollen Analysis clicked");
+                      }
+                    },
                   ),
                   const SizedBox(width: 12),
                   AnalysisCardWidget(
                     title: 'Pollen Forecast',
                     icon: Icons.calendar_today_outlined,
+                    onTap: () {
+                      if (kDebugMode) {
+                        print("Pollen Forecast clicked");
+                      }
+                    },
                   ),
                   const SizedBox(width: 12),
                   AnalysisCardWidget(
                     title: 'Weather',
                     icon: Icons.cloud_outlined,
+                    onTap: () {
+                      if (kDebugMode) {
+                        print("Weather clicked");
+                      }
+                    },
                   ),
                   const SizedBox(width: 12),
                   AnalysisCardWidget(
                     title: 'Allergy Log',
                     icon: Icons.edit_note_outlined,
+                    onTap: () {
+                      if (kDebugMode) {
+                        print("Allergy Log clicked");
+                      }
+                    },
                   ),
                 ],
               ),
