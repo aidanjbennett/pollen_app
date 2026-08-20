@@ -1,12 +1,28 @@
+import 'package:flutter/material.dart';
+
 // TODO: Actually implement this
-class HomeViewModel {
-  String? get currentTemperature {
-    // return '16°C';
-    return null;
+class HomeViewModel extends ChangeNotifier {
+  String? _postCode;
+  String? _currentTemperature;
+
+  String? get postCode => _postCode;
+
+  String? get currentTemperature => _currentTemperature;
+
+  void setPostCode(String? value) {
+    _postCode = value;
+    notifyListeners();
   }
 
-  String? get postCode {
-    // return 'AB4 3CD';
-    return null;
+  void setCurrentTemperature(String? value) {
+    _currentTemperature = value;
+    notifyListeners();
+  }
+
+  void updateLocation({String? postCode, String? currentTemperature}) {
+    _postCode = postCode;
+    _currentTemperature = currentTemperature;
+
+    notifyListeners();
   }
 }
