@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:pollen_app/widgets/ads/banner_ad_widget.dart';
 import 'package:provider/provider.dart';
 
 import 'package:pollen_app/viewmodels/home_view_model.dart';
@@ -98,6 +99,10 @@ class HomeScreen extends StatelessWidget {
                 ],
               ),
             ),
+
+            const SizedBox(height: 24),
+            const BannerAdWidget(),
+            const SizedBox(height: 16),
           ],
         ),
       ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:provider/provider.dart';
 
 import 'package:pollen_app/views/home_screen.dart';
@@ -7,7 +8,11 @@ import 'package:pollen_app/views/pollen_analysis_screen.dart';
 
 import 'viewmodels/home_view_model.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await MobileAds.instance.initialize();
+
   runApp(
     ChangeNotifierProvider(
       create: (_) => HomeViewModel(),

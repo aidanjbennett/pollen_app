@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pollen_app/models/pollen_item_model.dart';
+import 'package:pollen_app/widgets/ads/banner_ad_widget.dart';
 import 'package:pollen_app/widgets/pollen_analytics/pollen_section_widget.dart';
 
 class PollenAnalysisScreen extends StatelessWidget {
@@ -104,6 +105,8 @@ class PollenAnalysisScreen extends StatelessWidget {
                 ),
               ],
             ),
+            const SizedBox(height: 24),
+            const BannerAdWidget(),
           ],
         ),
       ),
