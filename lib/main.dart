@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 
 import 'package:pollen_app/views/home_screen.dart';
 import 'package:pollen_app/views/settings_screen.dart';
+import 'package:pollen_app/views/pollen_analysis_screen.dart';
 
 import 'viewmodels/home_view_model.dart';
 
@@ -29,6 +30,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => const HomeScreen(),
         '/settings': (context) => const SettingsScreen(),
+        '/pollen-analysis': (context) => PollenAnalysisScreen(),
       },
     );
   }

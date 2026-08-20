@@ -68,9 +68,7 @@ class HomeScreen extends StatelessWidget {
                     title: 'Pollen Analysis',
                     icon: Icons.analytics_outlined,
                     onTap: () {
-                      if (kDebugMode) {
-                        print('Pollen Analysis clicked');
-                      }
+                      Navigator.of(context).pushNamed('/pollen-analysis');
                     },
                   ),
 
