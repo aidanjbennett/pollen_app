@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 import 'package:pollen_app/services/ad_helper.dart';
+import 'package:pollen_app/services/consent_service.dart';
 
 class BannerAdWidget extends StatefulWidget {
   const BannerAdWidget({super.key, this.padding = EdgeInsets.zero});
@@ -27,6 +28,10 @@ class _BannerAdWidgetState extends State<BannerAdWidget> {
   }
 
   Future<void> _loadAd() async {
+    if (!ConsentService.instance.canRequestAds) {
+      return;
+    }
+
     _isLoading = true;
 
     final width = MediaQuery.sizeOf(context).width.truncate();
